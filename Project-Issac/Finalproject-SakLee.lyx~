@@ -1,0 +1,2877 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{kotex}
+\usepackage{fullpage}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\end_preamble
+\use_default_options false
+\begin_modules
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding utf8-plain
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Introduction to LyX"
+\pdf_author "LyX Team"
+\pdf_subject "LyX-documentation Intro"
+\pdf_keywords "LyX, documentation"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 2
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "linkcolor=black, citecolor=black, urlcolor=blue, filecolor=blue, pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 0
+\use_package mhchem 1
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+Which factors can affect to payroll of NBA player? - using LASSO
+\end_layout
+
+\begin_layout Author
+
+\series bold
+SAK LEE
+\end_layout
+
+\begin_layout Section
+Salaries of NBA players
+\end_layout
+
+\begin_layout Standard
+The National Basketball Association(NBA) is considered to be the No.
+ 1 men's professional basketball leagues in the world.
+ NBA league is the one of the big four leagues in North America.
+ The big four leagues includes Major League Baseball(MLB), National Football
+ League(NFL), National Hockey League(NHL), and NBA.
+ NBA leagues is consists of thirty teams: 29 teams from the United States
+ of America, 1 team from Canada, and the total number of players who is
+ registered in the league is 
+\begin_inset Formula $585$
+\end_inset
+
+ in 2015-2016 season.
+\end_layout
+
+\begin_layout Standard
+Although the NBA takes the third place among the four leagues with respect
+ to the revenue of the leagues, the average salaries of the players is the
+ highest among the four leagues.
+ The average salary of NBA players for the 2013-14 season, $
+\begin_inset Formula $4.9$
+\end_inset
+
+ million, is higher than $
+\begin_inset Formula $3.82$
+\end_inset
+
+ million of MLB players which is the second highest average salary among
+ the four.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+ At the same time, the payroll gaps between the players also huge; Kobe
+ Bryant had received the most highest salary, $
+\begin_inset Formula $30.45$
+\end_inset
+
+ million for the 2013-2014 season while the smallest one was $
+\begin_inset Formula $490,180$
+\end_inset
+
+.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-1"
+
+\end_inset
+
+ Since the most of the players in NBA usually sign a contract with their
+ club for several years, a contract could give an owner of a club a huge
+ financial losses.
+ Therefore, it is important for the owners of the clubs to have a clear
+ decision rule of player's salary based on the ability of the players.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename graph/RplotHistSalary.jpeg
+	width 4.5in
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Previous research
+\end_layout
+
+\begin_layout Standard
+Lyons et al.
+ (2015)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+ try to analyze which factors can affect the salaries of the NBA player
+ through the multiple regressions.
+ Based on the study, points per game, rebounds, and personal fouls contributes
+ to a player's salary
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+.
+ Berri et al.
+ (2007)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-2"
+
+\end_inset
+
+ consider the player's position as the one of the independent variables
+ explaining the salaries in the multiple regression, this study still use
+ the common variables; PTS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Points scored, per game
+\end_layout
+
+\end_inset
+
+, REB
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Rebounds, per game
+\end_layout
+
+\end_inset
+
+, BLK
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Block shots, per game
+\end_layout
+
+\end_inset
+
+, and Games played.
+ However, NBA basket ball teams have a five positions whose main functions
+ are slightly different from each other.
+ For example, a point guard position in the basketball team is expected
+ to distribute the ball to the other team player so that the offense of
+ the team become more effective.
+ Therefore, it could be more reasonable to decide to give a high salary
+ when the point guard has more assists, steal, and scoring rather than the
+ rebound.
+ For these reasons, this study analyzes the data to find the determinants
+ of NBA players salaries depending on the positions of the players in basketball.
+\end_layout
+
+\begin_layout Section
+Data & Methodology
+\end_layout
+
+\begin_layout Subsection
+Used Data
+\end_layout
+
+\begin_layout Standard
+In 2015-2016 season, there are 
+\begin_inset Formula $558$
+\end_inset
+
+ players who have an active contract in the NBA.
+ Since NBA has a regulation of salaries for the rookies, some players who
+ have entered in the league within 3 years are forced to receive under a
+ rookies salary cap (Lyons et al., 2015)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3"
+
+\end_inset
+
+.
+ For these reason, some studies exclude the NBA players who is under the
+ rookies salary cap from their data set.
+ However, the reason NBA has a payroll system controlling the player's salary
+ is that the league can provide financial supports to their players relatively
+ more stable than when they have the free agency contract.
+ Therefore, this study considers this aspect of the data by including player's
+ age to the explanatory variable.
+ Since the age is highly correlated with the experiences of players, the
+ age of player is expected to demonstrate the salary system of NBA in the
+ regression setting.
+ Therefore, all 
+\begin_inset Formula $558$
+\end_inset
+
+ player's data is used in the analysis.
+\end_layout
+
+\begin_layout Standard
+Moreover, these 
+\begin_inset Formula $558$
+\end_inset
+
+ data are split into the five data set with respect to the player's position
+ because one of the main goals in this study is to determine the main factors
+ of the NBA player's payroll depending on their position in the game.
+ The size of each groups are around 
+\begin_inset Formula $100$
+\end_inset
+
+ which means each portions of the position are equal.
+ These sub groups of data again split into two groups; one for the estimation,
+ another for the validity.
+ For the independent variables, the individual player's performance information
+ data is used which consists of the following 26 variables:
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Age
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Age
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3-Point
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+G
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Games
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3PA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3-Point Attempt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Games Started
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3P%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3-Point Percent 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Minutes Played 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2-Point
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Field Goals
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2PA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2-Point Attempt
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FGA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Field Goals Attempt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2P%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2-Point Percent 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FG%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Field Goal Percentage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+eFG%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Effective Field Goal Percent
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Free Throws
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+STL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Steals
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FTA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Free Throws Attempt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BLK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Blocks
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+FT%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Free Throws Percentage
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TOV
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Turnovers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ORB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Offensive Rebounds
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Personal Fouls
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DRB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Defensive Rebounds 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PTS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Points
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TRB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total Rebounds
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Table 1: List of independent variables
+\end_layout
+
+\begin_layout Subsection
+Collecting Data from Web
+\end_layout
+
+\begin_layout Standard
+The data used in this study came from the NBA player's contract data from
+ the reference web site (
+\begin_inset CommandInset href
+LatexCommand href
+name "NBA reference"
+target "http://www.basketball-reference.com/contracts/players.html"
+
+\end_inset
+
+).
+ Since the salary data only has information of names of players and their
+ team, each player's stats are should be matched with salary data.
+ The following is the part of the 
+\begin_inset Formula $\mathtt{Rcode}$
+\end_inset
+
+ that gather the urls of the each player's individual stat web pages from
+ the html source code using R package named 
+\begin_inset Formula $\mathtt{XML}$
+\end_inset
+
+.
+ In the html code, each player's url is located between 
+\begin_inset Formula $\mathtt{<a\,href\diagdown"}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathtt{\diagdown">}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\mathtt{substring}$
+\end_inset
+
+ function allows R to grab the urls as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE,message=FALSE,warning=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# Collecting urls for each players
+\end_layout
+
+\begin_layout Plain Layout
+
+url <- "http://www.basketball-reference.com"
+\end_layout
+
+\begin_layout Plain Layout
+
+allplayer.url <- vector(mode = "list", length = 558)
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:558){
+\end_layout
+
+\begin_layout Plain Layout
+
+    player.url <- thepage[grep(tab$Player[i] ,thepage)]
+\end_layout
+
+\begin_layout Plain Layout
+
+    mypattern.start <- '<a href=
+\backslash
+"'
+\end_layout
+
+\begin_layout Plain Layout
+
+    mypattern.end <- '
+\backslash
+">'
+\end_layout
+
+\begin_layout Plain Layout
+
+    s <- regexpr(mypattern.start, player.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+    e <- regexpr(mypattern.end, player.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+    allplayer.url[[i]] <- unique(paste(url, substring(player.url,
+\end_layout
+
+\begin_layout Plain Layout
+
+    s + attributes(s)$match.length, e - 1), sep = ""))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+allplayer.url[1:3]
+\end_layout
+
+\begin_layout Plain Layout
+
+[1] "http://www.basketball-reference.com/players/b/bryanko01.html"
+\end_layout
+
+\begin_layout Plain Layout
+
+[2] "http://www.basketball-reference.com/players/j/johnsjo02.html"
+\end_layout
+
+\begin_layout Plain Layout
+
+[3] "http://www.basketball-reference.com/players/j/jamesle01.html"
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the player's urls obtained, we grabbed the latest season's stats from
+ the each individual's web site in the similar way.
+ The whole 
+\begin_inset Formula $\mathtt{Rcode}$
+\end_inset
+
+ can be accessed from the Appendix.
+\end_layout
+
+\begin_layout Subsection
+Lasso(the least absolute shrinkage and selection operator) method
+\end_layout
+
+\begin_layout Standard
+To determine the effective factors on the salary of the players depending
+ on the position, the least absolute shrinkage and selection operator(Lasso)
+ method will be used for the analysis.
+ Lasso was introduced by Tibshirani (1996)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-4"
+
+\end_inset
+
+ which is similar to ordinary regression analysis except the penalty function
+ in the estimation procedure.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose we have 
+\begin_inset Formula $n$
+\end_inset
+
+ samples of 
+\begin_inset Formula $\left(y_{i},\underline{x}_{i}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $i=1,2,...n$
+\end_inset
+
+.
+ The ordinary least square regression estimator 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ minimizes 
+\begin_inset Formula $L\left(\beta\right)$
+\end_inset
+
+ where
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L\left(\beta\right)\equiv\sum_{i=1}^{n}\left(y_{i}-\beta_{0}-\sum_{j=1}^{p}\beta_{j}x_{ij}\right)^{2}.
+\]
+
+\end_inset
+
+ However, Lasso estimator also minimizes 
+\begin_inset Formula $L\left(\beta\right)$
+\end_inset
+
+ function above under the constrain of 
+\begin_inset Formula $L^{1}$
+\end_inset
+
+ norm of the parameter.
+ Therefore, object function for the minimization 
+\begin_inset Formula $L^{lasso}\left(\beta\right)$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L^{lasso}\left(\beta\right)\equiv\sum_{i=1}^{n}\left(y_{i}-\beta_{0}-\sum_{j=1}^{p}\beta_{j}x_{ij}\right)^{2}+\lambda\sum_{j=1}\left|\beta_{j}\right|.
+\]
+
+\end_inset
+
+ By giving an absolute value penalty, 
+\begin_inset Formula $\sum_{j=1}\left|\beta_{j}\right|$
+\end_inset
+
+,to the regression, Lasso method allows us to benefit not only shrinkage
+ effect but also variable selection which have an impact on the 
+\begin_inset Formula $y$
+\end_inset
+
+ values.
+ In this study, Lasso will be used to determine that which 
+\begin_inset Formula $X$
+\end_inset
+
+ variables have an impact of the salaries.
+ Lasso estimator usually can be obtained through the many numerical optimization
+ algorithms, however, Friedman et.
+ al.(2007)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-5"
+
+\end_inset
+
+ suggests the coordinate decent algorithm for calculating lasso estimator
+ because of the simplicity and the calculation speed.
+ Donoho and Johnstone (1995)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-6"
+
+\end_inset
+
+ shows that searching the minimizer of the Lasso objective function in a
+ single predictor case is same as getting the value from the threshold function
+ of the least square estimator,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\hat{\beta}^{lasso}\left(\gamma\right)=S\left(\hat{\beta},\gamma\right)\equiv sign\left(\hat{\beta}\right)\left(\left|\hat{\beta}\right|-\gamma\right)_{+}=\begin{cases}
+\hat{\beta}-\gamma, & \qquad\mbox{if }\hat{\beta}>0\mbox{ and }\gamma<\left|\hat{\beta}\right|\\
+\hat{\beta}+\gamma, & \qquad\mbox{if }\hat{\beta}<0\mbox{ and }\gamma<\left|\hat{\beta}\right|\\
+0, & \qquad\mbox{if }\gamma\geq\left|\hat{\beta}\right|
+\end{cases}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+ is the ordinary least square estimator.
+ Here is the coordinate decent algorithm for minimization of the Lasso objective
+ function suggested by Friedman et.
+ al.(2007)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-5"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+For given(fixed) 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, updating the beta vector until it converges;
+\begin_inset Formula 
+\[
+\hat{\beta}_{j}^{lasso}\left(\gamma\right)\leftarrow S\left(\sum_{i=1}^{n}x_{ij}\left(y_{i}-\tilde{y}_{i}^{\left(j\right)}\right),\gamma\right),
+\]
+
+\end_inset
+
+ where 
+\begin_inset Formula $\tilde{y}_{i}^{\left(j\right)}\equiv\sum_{k\neq j}x_{ik}\tilde{\beta}_{k}\left(\gamma\right)$
+\end_inset
+
+, 
+\begin_inset Formula $j=1,2,...,p,1,2,...$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+it can be shown 
+\begin_inset Formula $\tilde{\beta}_{k}\left(\gamma\right)$
+\end_inset
+
+ converges to 
+\begin_inset Formula $L^{lasso}\left(\beta\right)$
+\end_inset
+
+.
+ Finally, to draw the Lasso path which means calculating the every coefficients
+ for every possible 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, the following step is added to the coordinate decent algorithm:
+\end_layout
+
+\begin_layout Itemize
+After getting the 
+\begin_inset Formula $L^{lasso}\left(\beta\right)$
+\end_inset
+
+ for given 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, move to the next 
+\begin_inset Formula $\lambda^{\prime}$
+\end_inset
+
+ and used the obtained 
+\begin_inset Formula $\hat{\beta}\left(\lambda\right)$
+\end_inset
+
+ as the initial values for the coordinate decent algorithm for 
+\begin_inset Formula $\hat{\beta}\left(\lambda^{\prime}\right)$
+\end_inset
+
+.
+ This will give a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{warm start}
+\end_layout
+
+\end_inset
+
+ to the algorithm.
+\end_layout
+
+\begin_layout Section
+Result and discussion
+\end_layout
+
+\begin_layout Subsection
+Point Guard position
+\end_layout
+
+\begin_layout Standard
+NBA player whose position is PG(point guard) in the basketball plays a roll
+ of distribution of ball and play making.
+ Table 2 shows that selected variables and their coefficients from the Lasso
+ algorithm when given 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is 
+\begin_inset Formula $33$
+\end_inset
+
+.
+ As we expected before, age is selected as an influence factor to players
+ salary which can explain the salary system of the league.
+ The number of games and the number of games as a starting member has a
+ coefficient 
+\begin_inset Formula $-0.0459$
+\end_inset
+
+ and 
+\begin_inset Formula $0.2706$
+\end_inset
+
+ respectively.
+ This implies that the player will be likely to get a higher salary as they
+ play more games which coinsides our expectation.
+ However, if they play many game but not a starting member of their team,
+ like a sixman of team, players will have large 
+\begin_inset Formula $G$
+\end_inset
+
+ and small 
+\begin_inset Formula $GS$
+\end_inset
+
+ which eventually leads to lower salary than the players who have large
+ 
+\begin_inset Formula $G$
+\end_inset
+
+ and 
+\begin_inset Formula $GS$
+\end_inset
+
+, starting members.
+ Moreover, as PG players tends to more score in a game, they will get a
+ higer salary which agree with the intuition.
+ Note that, however, the coefficient for 
+\begin_inset Formula $2P$
+\end_inset
+
+ is most highest coefficient among the selected variables which can be seen
+ that among the PG players in the league the market prefer to choose the
+ one is good at not only distributing the ball but also scoring.
+ The number of assist and steals are also positivley corelated to the PG
+ players' salary.
+ The negetive coefficient of the number of block seems weired but it can
+ be ignored since most PG players have few number of blocks in the season.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graph/RplotPG.jpeg
+	width 4.5in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lasso path for NBA PG(point guard)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% latex table generated in R 3.2.3 by xtable 1.8-2 package
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sat May 07 11:56:24 2016
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[ht]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rlllllll}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+hline Variables & Age & G & GS & 2P & AST & STL & BLK 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     Coefficients & 0.1015 & -0.0459 & 0.2706 & 0.4029 & 0.1415 & 0.0336 & -0.0859
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Table 2: Selected variables & Coefficients for PG
+\end_layout
+
+\begin_layout Subsection
+Shooting Guard position
+\end_layout
+
+\begin_layout Standard
+NBA player whose position is SG(shooting guard) in the basketball plays
+ a roll of scoring.
+ Table 3 shows the selected variables and thier coefficients for SG players.
+ Note that variable 
+\begin_inset Formula $FT$
+\end_inset
+
+ and 
+\begin_inset Formula $FT\%$
+\end_inset
+
+ are newly picked by Lasso comparing to the case of PG players.
+ 
+\begin_inset Formula $FT$
+\end_inset
+
+ means scored by free throws which players receive when they got faul from
+ other players while the players was making shooting.
+ 
+\begin_inset Formula $FT\%$
+\end_inset
+
+ means the success probability.
+ These two factors have 
+\begin_inset Formula $0.2199$
+\end_inset
+
+ and 
+\begin_inset Formula $0.225$
+\end_inset
+
+ respectively.
+ The player who has a large 
+\begin_inset Formula $FT$
+\end_inset
+
+ implies that he is an agressive attacker at the sametime they are hard
+ to guard.
+ Therefore, players who are good at getting fauls from opponents and have
+ higher success probability in free throw highly contribute to their team's
+ winning.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graph/RplotSG.jpeg
+	width 4.5in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lasso path for NBA SG(shooting guard)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% latex table generated in R 3.2.3 by xtable 1.8-2 package
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sat May 07 08:25:55 2016
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[ht]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rlllllll}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline Variables & Age & G & GS & FT & FT
+\backslash
+% & AST & BLK 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+      Coefficients & 0.1587 & -0.0045 & 0.2199 & 0.225 & 0.0038 & 0.1683 & 0.0812
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Table 3: Selected variables & Coefficients for SG
+\end_layout
+
+\begin_layout Subsection
+Small Forward position
+\end_layout
+
+\begin_layout Standard
+NBA player whose position is SF(Small forward) in the basketball also plays
+ a roll of scoring.
+ Table 4 shows the selected variables and thier coefficients for SF players.
+ Similar to the SG players, 
+\begin_inset Formula $FT$
+\end_inset
+
+ and 
+\begin_inset Formula $FT\%$
+\end_inset
+
+ are selected.
+ Moreover, players who have more aggresive play stlye, which indicates high
+ 
+\begin_inset Formula $FGA$
+\end_inset
+
+ and 
+\begin_inset Formula $2PA$
+\end_inset
+
+, are likely to have a high salary.
+ Note that the coefficient of 
+\begin_inset Formula $AST$
+\end_inset
+
+ variable for SF players are larger than that for SG players.
+ Since SF players are usually plays in the inner part of the court and they
+ have to closely play with big mans.
+ Therefore, simillar to the PG cases, among the SF players in the league
+ the market prefer to choose the one is good at not only scoring the ball
+ but also assist which directly leads to the team's scoring.
+ Lastly, 
+\begin_inset Formula $PF$
+\end_inset
+
+ has a negative coefficient to the salary which implies a faul-manage skill
+ is also important in the evaluation of player.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename graph/RplotSF.jpeg
+	width 4.5in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lasso path for NBA SF(small forward)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% latex table generated in R 3.2.3 by xtable 1.8-2 package
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sat May 07 08:32:54 2016
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[ht]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rllllllll}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline Variables & Age & G & FGA & 2PA & FT & FT
+\backslash
+% & AST & PF 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+         Coefficients & 0.2148 & -0.1382 & 0.153 & 0.3688 & 0.0763 & 0.0013 &
+ 0.3325 & -0.1632 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Table 4: Selected variables & Coefficients for SF
+\end_layout
+
+\begin_layout Subsection
+Power Forward position & Center forward position
+\end_layout
+
+\begin_layout Standard
+NBA player whose position is PF(Power forward) & C(center forward) in the
+ basketball plays a roll of play maker.
+ As a bigman in the team, they usually play together with other players
+ using screen plays.
+ An interesting selected variables for bigmans from the Lasso result are
+ 
+\begin_inset Formula $eFG\%$
+\end_inset
+
+ and 
+\begin_inset Formula $3P\%$
+\end_inset
+
+.
+ 
+\begin_inset Formula $eFG\%$
+\end_inset
+
+ measures the adjusted percentage of feild goal which will give more weight
+ to the 3 point feild goal.
+ These results reflectes the trend in the NBA league that teams are starting
+ to use their bigmans in the 3 point offensive play in the game.
+ For these reason, if the bigman players has higher percentage of 3 point,
+ their team has one more option to score, which alternatively leads to the
+ winning.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename graph/RplotPF.jpeg
+	width 3in
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename graph/RplotC.jpeg
+	width 3in
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Figure 5: Lasso path for NBA PF(power forward) & C(center forward)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% latex table generated in R 3.2.3 by xtable 1.8-2 package
+\end_layout
+
+\begin_layout Plain Layout
+
+% Sat May 07 08:35:11 2016
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[ht]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rlllllll}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline Variables(PF) & Age & GS & 2P & eFG
+\backslash
+% & FT & FTA & AST 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+      Coefficients & 0.1375 & 0.0814 & 0.0452 & 0.0138 & 0.2523 & 0.1728 & 0.0958
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+hline Variables(C) & Age & GS & 3P
+\backslash
+% & 2P & FT & FTA & AST 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      Coefficients & 0.2135 & 0.0335 & 0.005 & 0.3376 & 0.0814 & 0.0911 & 0.0294
+ 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Table 5: Selected variables & Coefficients for PF, C
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+ Badenhausen, K.
+ (2015).
+ Average MLB player salary nearly double NFL's, but still trails NBA's.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{
+\backslash
+textbf{Forbes}}
+\end_layout
+
+\end_inset
+
+.
+ Retrieved from http://www.forbes.com
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+ Berri, D.
+ J., Brook S.
+ L., & Schmidt, M.
+ B.
+ (2007).
+ Does one simply need to score to score?.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{International Journal of Sport Finance, 2}
+\end_layout
+
+\end_inset
+
+, 142-148.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-3"
+
+\end_inset
+
+ Lyons, R., Jackson, E.
+ N., & Livingston, A.
+ (2015).
+ Determinants of NBA player salaries.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{U.S.
+ Sports Academy - The Sport Journal}
+\end_layout
+
+\end_inset
+
+.
+ http://thesportjournal.org
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-4"
+
+\end_inset
+
+ Tibshirani, Robert.
+ "Regression shrinkage and selection via the lasso." 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{Journal of the Royal Statistical Society.
+ Series B (Methodological)}
+\end_layout
+
+\end_inset
+
+ (1996): 267-288.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-5"
+
+\end_inset
+
+ Friedman, Jerome, et al.
+ "Pathwise coordinate optimization." 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{The Annals of Applied Statistics}
+\end_layout
+
+\end_inset
+
+ 1.2 (2007): 302-332.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-6"
+
+\end_inset
+
+ Donoho, David L., and Iain M.
+ Johnstone.
+ "Adapting to unknown smoothness via wavelet shrinkage." Journal of the american
+ statistical association 90.432 (1995): 1200-1224.
+\end_layout
+
+\begin_layout Section
+Appendix
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\mathtt{Rcode}$
+\end_inset
+
+ for collecting data from web
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE,message=FALSE,warning=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+library(XML)
+\end_layout
+
+\begin_layout Plain Layout
+
+library(beepr)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Collecting Data from Web
+\end_layout
+
+\begin_layout Plain Layout
+
+url <- "http://www.basketball-reference.com/contracts/players.html"
+\end_layout
+
+\begin_layout Plain Layout
+
+thepage <- readLines(url)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Read table from Web
+\end_layout
+
+\begin_layout Plain Layout
+
+tab <- readHTMLTable(url, stringsAsFactors = FALSE)[[1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Data cleaning salary, player remove
+\end_layout
+
+\begin_layout Plain Layout
+
+tab <- tab[-grep("Salary", tab$Player),]
+\end_layout
+
+\begin_layout Plain Layout
+
+tab <- tab[-grep("Player", tab$Player),]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Collecting urls for each players
+\end_layout
+
+\begin_layout Plain Layout
+
+url <- "http://www.basketball-reference.com"
+\end_layout
+
+\begin_layout Plain Layout
+
+allplayer.url <- vector(mode = "list", length = length(tab$Player))
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:length(tab$Player)){
+\end_layout
+
+\begin_layout Plain Layout
+
+	player.url <- thepage[grep(tab$Player[i] ,thepage)]
+\end_layout
+
+\begin_layout Plain Layout
+
+	mypattern.start <- '<a href=
+\backslash
+"'
+\end_layout
+
+\begin_layout Plain Layout
+
+	mypattern.end <- '
+\backslash
+">'
+\end_layout
+
+\begin_layout Plain Layout
+
+	s <- regexpr(mypattern.start, player.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+	e <- regexpr(mypattern.end, player.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+	allplayer.url[[i]] <- unique(paste(url, substring(player.url,
+\end_layout
+
+\begin_layout Plain Layout
+
+		s + attributes(s)$match.length, e - 1), sep = ""))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+allplayer.url <- unlist(allplayer.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+allplayer.url <- allplayer.url[grep("html", allplayer.url)]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Pasting individual stat to salary data
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable <- data.frame(matrix(nrow = 585, ncol = 32), stringsAsFactors =
+ FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+total <- length(allplayer.url)
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:total){     ability <- readHTMLTable(allplayer.url[i],
+\end_layout
+
+\begin_layout Plain Layout
+
+                              stringsAsFactors = FALSE)[[1]]
+\end_layout
+
+\begin_layout Plain Layout
+
+    season <- dim(ability)[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (season == 1 & length(ability) < 8) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        bigtable[i, ] <- cbind(tab[i, c(1,2,4)], t(rep(NA, 29)))
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else{
+\end_layout
+
+\begin_layout Plain Layout
+
+        bigtable[i, ] <- cbind(tab[i, c(1,2,4)], ability[season, -1])
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+names(bigtable) <- names(cbind(tab[1, c(1,2,4)], ability[season, -1]))
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- bigtable[bigtable$Lg == "NBA",]
+\end_layout
+
+\begin_layout Plain Layout
+
+index <- bigtable.NBA$Pos == ""
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- bigtable.NBA[!is.na(bigtable.NBA$`2015-16`) & !index,]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Dollar to numeric
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA$`2015-16` <- substr(bigtable.NBA$`2015-16`, 2,
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 nchar(bigtable.NBA$`2015-16`))
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA$`2015-16` <- as.numeric(gsub('
+\backslash
+
+\backslash
+,', '',
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 as.character(bigtable.NBA$`2015-16`)))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# change all to numeric using below two line
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- as.matrix(bigtable.NBA)
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- as.data.frame(bigtable.NBA)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA[,-c(2,5,6,7)] <- lapply(bigtable.NBA[,-c(2,5,6,7)],
+\end_layout
+
+\begin_layout Plain Layout
+
+                         function(x) as.numeric(as.character(x)))
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- transform(bigtable.NBA, Player = as.character(Player))
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- transform(bigtable.NBA, Tm = as.factor(Tm))
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBA <- transform(bigtable.NBA, Pos = as.factor(Pos))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Write CSV in R
+\end_layout
+
+\begin_layout Plain Layout
+
+# write.csv(bigtable.NBA, file = "bigtableNBA.csv", row.names = FALSE, na =
+ "")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBAPG <- bigtable.NBA[bigtable.NBA$Pos == "PG",]
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBASG <- bigtable.NBA[bigtable.NBA$Pos == "SG",]
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBASF <- bigtable.NBA[bigtable.NBA$Pos == "SF",]
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBAPF <- bigtable.NBA[bigtable.NBA$Pos == "PF",]
+\end_layout
+
+\begin_layout Plain Layout
+
+bigtable.NBAC  <- bigtable.NBA[bigtable.NBA$Pos == "C",]
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+\begin_inset Formula $\mathtt{Rcode}$
+\end_inset
+
+ for Lasso path
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# for bigtable.NBAPG
+\end_layout
+
+\begin_layout Plain Layout
+
+xdata <- bigtable.NBAPG[-grep('X2015.16', names(bigtable.NBAPG))]
+\end_layout
+
+\begin_layout Plain Layout
+
+ydata <- bigtable.NBAPG[ grep('X2015.16', names(bigtable.NBAPG))]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+xdata <- xdata[-c(1:2,4:6)]
+\end_layout
+
+\begin_layout Plain Layout
+
+xdata[is.na(xdata)] <- 0
+\end_layout
+
+\begin_layout Plain Layout
+
+xdata <- scale(xdata)
+\end_layout
+
+\begin_layout Plain Layout
+
+ydata <- scale(ydata)
+\end_layout
+
+\begin_layout Plain Layout
+
+xdata <- cbind(rep(1,nrow(xdata)), xdata)
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(xdata)[1] <- "Constant"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+set.seed(123)
+\end_layout
+
+\begin_layout Plain Layout
+
+test <- sort(sample(nrow(bigtable.NBAPG), 20, replace = FALSE))
+\end_layout
+
+\begin_layout Plain Layout
+
+train.x <- xdata[-test,] train.y <- ydata[-test,]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# beta matrix calculate
+\end_layout
+
+\begin_layout Plain Layout
+
+#================================================
+\end_layout
+
+\begin_layout Plain Layout
+
+soft_th <- function(z, r){
+\end_layout
+
+\begin_layout Plain Layout
+
+    sign(z) * max( abs(z) - r, 0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+lambda <- 1 - seq(0.01, 1, length = 100)
+\end_layout
+
+\begin_layout Plain Layout
+
+beta_matrix <- matrix(0, nrow = 27, ncol = length(lambda))
+\end_layout
+
+\begin_layout Plain Layout
+
+total <- length(lambda)
+\end_layout
+
+\begin_layout Plain Layout
+
+# create progress bar 
+\end_layout
+
+\begin_layout Plain Layout
+
+pb <- txtProgressBar(min = 0, max = total, style = 3)
+\end_layout
+
+\begin_layout Plain Layout
+
+beta_new <- rep(0, 27)
+\end_layout
+
+\begin_layout Plain Layout
+
+beta_hat <- c(mean(train.y), rep(0, 26))
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:length(lambda)){
+\end_layout
+
+\begin_layout Plain Layout
+
+    lamb <- lambda[i]
+\end_layout
+
+\begin_layout Plain Layout
+
+    repeat{
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (j in 1:27){
+\end_layout
+
+\begin_layout Plain Layout
+
+            y_hat <- train.x %*% beta_hat
+\end_layout
+
+\begin_layout Plain Layout
+
+            s <- soft_th( mean(train.x[,j] * 
+\end_layout
+
+\begin_layout Plain Layout
+
+                         (train.y - y_hat)) + beta_hat[j] , lamb)
+\end_layout
+
+\begin_layout Plain Layout
+
+            beta_hat[j] <- s
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+            epsilon <- max(abs(beta_new - beta_hat))
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (epsilon < 2.22e-10){
+\end_layout
+
+\begin_layout Plain Layout
+
+            break
+\end_layout
+
+\begin_layout Plain Layout
+
+        }  
+\end_layout
+
+\begin_layout Plain Layout
+
+            beta_new <- beta_hat
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    beta_matrix[ , i] <- beta_hat
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    Sys.sleep(0.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+    # update progress bar
+\end_layout
+
+\begin_layout Plain Layout
+
+    setTxtProgressBar(pb, i)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+beep()
+\end_layout
+
+\begin_layout Plain Layout
+
+close(pb)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Calculate the number of selected variable for given lambda
+\end_layout
+
+\begin_layout Plain Layout
+
+vr.num <- rep(0, length(lambda))
+\end_layout
+
+\begin_layout Plain Layout
+
+for (i in 1:length(lambda)){
+\end_layout
+
+\begin_layout Plain Layout
+
+    vr.num[i] <- length(which(beta_matrix[,i] != 0))
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+col <- which(vr.num == 6)[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+index <- which(beta_matrix[, col] != 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+beta_matrix[index, col]
+\end_layout
+
+\begin_layout Plain Layout
+
+fit.x <- train.x[,index]
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(fit.x)
+\end_layout
+
+\begin_layout Plain Layout
+
+b <- max(beta_matrix[index, col]) + 0.01
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Draw Lasso path
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(lambda, rep(0,100),
+\end_layout
+
+\begin_layout Plain Layout
+
+     xlim = rev(c(0, lambda[which(vr.num == 1)[1]] + 0.01)),
+\end_layout
+
+\begin_layout Plain Layout
+
+     ylim = c(-b, b),
+\end_layout
+
+\begin_layout Plain Layout
+
+     ylab = "Coefficients",
+\end_layout
+
+\begin_layout Plain Layout
+
+     col = "black",
+\end_layout
+
+\begin_layout Plain Layout
+
+     type = 'l')
+\end_layout
+
+\begin_layout Plain Layout
+
+par(new = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+for(i in 1:27){
+\end_layout
+
+\begin_layout Plain Layout
+
+    lines(lambda, beta_matrix[i, ], col = i, xlim = rev(range(lambda)))
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
